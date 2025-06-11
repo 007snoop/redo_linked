@@ -24,6 +24,14 @@ public class Manager {
         }
     }
 
+    public void redo() {
+        if (curr.next != null) {
+            curr = curr.next;
+        } else {
+            System.out.println("Nothing to redo");
+        }
+    }
+
     public String getCurr() {
         return curr.state;
     }
@@ -37,15 +45,20 @@ public class Manager {
         }
 
         // current state in [ ]
-        System.out.println("State Chain : ");
+        System.out.print("State Chain : ");
         while (temp != null) {
             if (temp == curr) {
-                System.out.print("[" + temp.state + "]");
+                System.out.print("[" + temp.state + "] ");
             } else {
-                System.out.print(temp.state + " -> ");
+                System.out.print(temp.state + " ");
             }
             temp = temp.next;
         }
         System.out.println();
+    }
+
+    public void printCurrState() {
+        System.out.println("Current State: " + getCurr());
+
     }
 }

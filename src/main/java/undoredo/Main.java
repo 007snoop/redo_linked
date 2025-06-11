@@ -8,6 +8,18 @@ public class Main {
         manager.addState("Second");
         manager.addState("Third");
 
+        System.out.println("Start node: ");
         manager.Chain();
+        manager.printCurrState();
+
+        System.out.println("Undo node: ");
+        manager.undo();
+        manager.Chain();
+        manager.printCurrState();
+
+        System.out.println("Redo node: ");
+        manager.redo();
+        manager.Chain();
+        manager.printCurrState();
     }
 }
